@@ -9,7 +9,7 @@
 <br/>
 
 > Projeto acadêmico desenvolvido para a disciplina de **Programação Orientada a Objetos com JDBC**
-> Universidade de Mogi das Cruzes — UMC, 2025
+> Universidade de Mogi das Cruzes — UMC, 2026
  
 </div>
 
@@ -123,7 +123,7 @@ Ao registrar uma doação, um **trigger no MySQL** identifica automaticamente o 
 ---
  
 <div align="center">
+
 © 2026 **CHAPS** — Todos os direitos reservados.
- 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&color=gradient&customColorList=6,11,20&section=footer&text=Let's%20Code!&fontColor=fff&fontSize=20&fontAlignY=65"/>
+
 </div>
