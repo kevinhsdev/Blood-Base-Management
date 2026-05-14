@@ -3,13 +3,6 @@ public class Estoque {
     private String tipoSanguineo;
     private double quantidadeSangue;
 
-    public Estoque() {};
-
-    public Estoque(String tipoSanguineo, double quantidadeSangue) {
-        this.tipoSanguineo = tipoSanguineo;
-        this.quantidadeSangue = quantidadeSangue;
-    }
-
     public String getTipoSanguineo() {
         return tipoSanguineo;
     }

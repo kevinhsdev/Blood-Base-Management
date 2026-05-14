@@ -7,15 +7,6 @@ public class Doador {
     private String tipoSanguineo;
     private double peso;
 
-    public Doador() {};
-    public Doador(String nome, int idade, String telefone, String tipoSanguineo, double peso) {
-        this.nome = nome;
-        this.idade = idade;
-        this.telefone = telefone;
-        this.tipoSanguineo = tipoSanguineo;
-        this.peso = peso;
-    }
-
     public int getId() {
         return id;
     }

@@ -5,14 +5,6 @@ public class Doacao {
     private String data;
     private int idDoador;
 
-    public Doacao() {};
-
-    public Doacao(double quantidadeSangue, String data, int idDoador) {
-        this.quantidadeSangue = quantidadeSangue;
-        this.data = data;
-        this.idDoador = idDoador;
-    }
-
     public int getId() {
         return id;
     }
