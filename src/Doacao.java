@@ -4,4 +4,5 @@ public class Doacao {
     private double quantidadeSangue;
     private String data;
     private int idDoador;
+
 }
