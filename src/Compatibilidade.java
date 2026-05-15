@@ -11,20 +11,20 @@
  *   B+ → doa para B+ e AB+
  *   AB- → doa para AB- e AB+
  *   AB+ → doa apenas para AB+
- */
+
 
 public class Compatibilidade {
 
     public Boolean verificarCompatibilidade(Doador doador, String tipoPaciente) {
         String tipoDoador = doador.getTipoSanguineo();
 
-        /*
         return switch (tipoDoador) {
-            case "O-"  -> true;
+            case "O-" -> true;
             case "O+" -> tipoPaciente.endsWith("+");
-        */
 
             // Continuação...
         };
     }
 }
+
+ */
