@@ -116,7 +116,7 @@ Ao registrar uma doação, um **trigger no MySQL** identifica automaticamente o 
 |:---:|:---:|:---:|
 | <img src="https://avatars.githubusercontent.com/kevinhsdev" width="80" style="border-radius:50%"/> | <img src="https://avatars.githubusercontent.com/JuliaRosa07" width="80" style="border-radius:50%"/> | <img src="https://avatars.githubusercontent.com/Biancabarsil" width="80" style="border-radius:50%"/> |
 | **Kevin Henrique da Silva** | **Julia Cavalcante da Rosa** | **Bianca Barbosa Silva** |
-|  | Documentação UML · HTML · CSS · JavaScript | Database MySQL · Figma |
+| Desenvolvimento Java | Documentação UML · HTML · CSS · JavaScript | Database MySQL · Figma |
 
 </div>
 
