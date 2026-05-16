@@ -12,6 +12,7 @@
  *   AB- → doa para AB- e AB+
  *   AB+ → doa apenas para AB+
 
+package Model;
 
 public class Compatibilidade {
 

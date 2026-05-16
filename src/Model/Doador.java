@@ -1,3 +1,5 @@
+package Model;
+
 public class Doador {
 
     private int id;
