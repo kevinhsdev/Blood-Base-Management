@@ -46,7 +46,7 @@ O projeto aplica na prática os conceitos de **Orientação a Objetos**, **padr�
 | MySQL 8.0 | Persistência de dados |
 | JDBC | Conexão Java ↔ MySQL |
 | Padrão DAO | Separação entre acesso a dados e regras de negócio |
-| NetBeans IDE | Ambiente de desenvolvimento |
+| NetBeans & IntelliJ IDE | Ambiente de desenvolvimento  Back-End |
 
 </div>
  
