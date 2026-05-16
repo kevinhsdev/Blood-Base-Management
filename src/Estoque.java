@@ -18,4 +18,9 @@ public class Estoque {
     public void setQuantidadeSangue(double quantidadeSangue) {
         this.quantidadeSangue = quantidadeSangue;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Sangue %s: %.0f ml", tipoSanguineo, quantidadeSangue);
+    }
 }
