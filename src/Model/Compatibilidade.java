@@ -11,6 +11,8 @@
  *   B+ → doa para B+ e AB+
  *   AB- → doa para AB- e AB+
  *   AB+ → doa apenas para AB+
+ *
+ */
 
 package Model;
 
@@ -22,10 +24,15 @@ public class Compatibilidade {
         return switch (tipoDoador) {
             case "O-" -> true;
             case "O+" -> tipoPaciente.endsWith("+");
-
-            // Continuação...
+            case "A-"  -> tipoPaciente.equals("A-")  || tipoPaciente.equals("A+")
+                    || tipoPaciente.equals("AB-") || tipoPaciente.equals("AB+");
+            case "A+"  -> tipoPaciente.equals("A+")  || tipoPaciente.equals("AB+");
+            case "B-"  -> tipoPaciente.equals("B-")  || tipoPaciente.equals("B+")
+                    || tipoPaciente.equals("AB-") || tipoPaciente.equals("AB+");
+            case "B+"  -> tipoPaciente.equals("B+")  || tipoPaciente.equals("AB+");
+            case "AB-" -> tipoPaciente.equals("AB-") || tipoPaciente.equals("AB+");
+            case "AB+" -> tipoPaciente.equals("AB+");
+            default    -> false;
         };
     }
 }
-
- */
