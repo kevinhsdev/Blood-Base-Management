@@ -1,0 +1,153 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 26 de mai. de 2026, 20:57:11
+    Author     : julia
+*/
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f0f0;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: 280px;
+  min-height: 100vh;
+  background-color: #0f1b2d;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+/* Logo area */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-name {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logo-sub {
+  color: #a0aec0;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+/* Nav items */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: rgba(255,255,255,0.06);
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background-color: #c0392b;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ── MAIN CONTENT ── */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f4f4f4;
+}
+
+/* Top bar */
+.topbar {
+  background: #ffffff;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* Hero section */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  background: #ebebeb;
+  text-align: center;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.hero-text h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 16px;
+}
+
+.highlight {
+  color: #c0392b;
+}
+
+.hero-text p {
+  font-size: 0.97rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+.hero-image img {
+  max-width: 420px;
+  width: 100%;
+  object-fit: contain;
+}

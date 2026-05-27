@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque de Sangue</title>
+    <link rel="stylesheet" href="style/estoque.css">
+</head>
+<body>
+    
+      <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="img/logo.png" alt="Logo CHAPS" class="logo-img" />
+      <div class="logo-text">
+        <span class="logo-name">CHAPS</span>
+        <span class="logo-sub">Hemocentro</span>
+      </div>
+    </div>
+ 
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item">Página Inicial</a>
+      <a href="cadastroDoador.html" class="nav-item">Cadastro de Doador</a>
+      <a href="registroDoacao.html" class="nav-item">Registro de Doação</a>
+      <a href="estoque.html" class="nav-item active">Estoque</a>
+      <a href="compatibilidade.html" class="nav-item">Teste de Compatibilidade</a>
+    </nav>
+  </aside>
+ 
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <header class="topbar">
+      <span>Estoque de Sangue</span>
+    </header>
+ 
+    <div class="page-body">
+      <div class="card">
+        <h2 class="card-title">Estoque Atual</h2>
+ 
+        <!-- Tabela populada via banco de dados -->
+        <div class="table-wrapper" id="tabelaEstoque">
+          <!-- Estrutura da tabela que virá do banco:
+ 
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo Sanguíneo</th>
+                <th>Quantidade Disponível (ml)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A+</td>
+                <td>1350</td>
+              </tr>
+              <tr>
+                <td>O-</td>
+                <td>900</td>
+              </tr>
+            </tbody>
+          </table>
+ 
+          -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

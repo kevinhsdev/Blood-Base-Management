@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Compatibilidade</title>
+    <link rel="stylesheet" href="style/compatibilidade.css">
+</head>
+<body>
+      <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="img/logo.png" alt="Logo CHAPS" class="logo-img" />
+      <div class="logo-text">
+        <span class="logo-name">CHAPS</span>
+        <span class="logo-sub">Hemocentro</span>
+      </div>
+    </div>
+ 
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item">Página Inicial</a>
+      <a href="cadastroDoador.html" class="nav-item">Cadastro de Doador</a>
+      <a href="registroDoacao.html" class="nav-item">Registro de Doação</a>
+      <a href="estoque.html" class="nav-item">Estoque</a>
+      <a href="compatibilidade.html" class="nav-item active">Teste de Compatibilidade</a>
+    </nav>
+  </aside>
+ 
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <header class="topbar">
+      <span>Teste de Compatibilidade</span>
+    </header>
+ 
+    <div class="page-body">
+ 
+      <!-- CARD: Dados do Paciente -->
+      <div class="card form-card">
+        <h2 class="card-title">Dados do Paciente</h2>
+ 
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tipo">Tipo Sanguíneo</label>
+            <input type="text" id="tipo" name="tipo" />
+          </div>
+ 
+          <div class="form-group">
+            <label for="peso">Peso (kg)</label>
+            <input type="text" id="peso" name="peso" />
+          </div>
+ 
+          <div class="form-group">
+            <label for="idade">Idade</label>
+            <input type="text" id="idade" name="idade" />
+          </div>
+        </div>
+ 
+        <div class="btn-row-center">
+          <button class="btn btn-red">Buscar Doadores Compatíveis</button>
+        </div>
+      </div>
+ 
+      <!-- CARD: Doadores Compatíveis -->
+      <div class="card result-card">
+        <h2 class="card-title">Doadores Compatíveis</h2>
+ 
+        <!-- Tabela populada via banco de dados -->
+        <div class="table-wrapper" id="tabelaCompatíveis">
+          <!-- Estrutura da tabela que virá do banco:
+ 
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tipo Sanguíneo</th>
+                <th>Peso (kg)</th>
+                <th>Telefone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2</td>
+                <td>Maria Souza</td>
+                <td>O+</td>
+                <td>68</td>
+                <td>(11) 98888-1111</td>
+              </tr>
+            </tbody>
+          </table>
+ 
+          -->
+        </div>
+      </div>
+ 
+    </div>
+  </main>
+</body>
+</html>

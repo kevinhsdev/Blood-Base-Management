@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Doações</title>
+    <link rel="stylesheet" href="style/registroDoacao.css">
+</head>
+<body>
+
+     
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="img/logo.png" alt="Logo CHAPS" class="logo-img" />
+      <div class="logo-text">
+        <span class="logo-name">CHAPS</span>
+        <span class="logo-sub">Hemocentro</span>
+      </div>
+    </div>
+ 
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item">Página Inicial</a>
+      <a href="cadastroDoador.html" class="nav-item">Cadastro de Doador</a>
+      <a href="registroDoacao.html" class="nav-item active">Registro de Doação</a>
+      <a href="estoque.html" class="nav-item">Estoque</a>
+      <a href="compatibilidade.html" class="nav-item">Teste de Compatibilidade</a>
+    </nav>
+  </aside>
+ 
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <header class="topbar">
+      <span>Registro de Doação</span>
+    </header>
+ 
+    <div class="page-body">
+ 
+      <!-- CARD: Formulário -->
+      <div class="card form-card">
+        <h2 class="card-title">Dados do Doação</h2>
+ 
+        <div class="form-group">
+          <label for="idDoador">ID do Doador</label>
+          <input type="number" id="idDoador" name="idDoador" />
+        </div>
+ 
+        <div class="form-group">
+          <label for="dataDoacao">Data da Doação</label>
+          <input type="date" id="dataDoacao" name="dataDoacao" />
+        </div>
+ 
+        <div class="form-group">
+          <label for="quantidade">Quantidade Coletada (ml)</label>
+          <input type="number" id="quantidade" name="quantidade" />
+        </div>
+ 
+        <div class="btn-row">
+          <button class="btn btn-green">Cadastrar</button>
+          <button class="btn btn-blue">Atualizar</button>
+          <button class="btn btn-red">Deletar</button>
+        </div>
+ 
+        <div class="btn-row-center">
+          <button class="btn btn-gray">Consultar Todos</button>
+        </div>
+      </div>
+ 
+      <!-- CARD: Lista de Doações -->
+      <div class="card list-card">
+        <h2 class="card-title">Lista de Doações</h2>
+ 
+        <div class="search-row">
+          <input type="text" id="searchId" placeholder="Consultar pelo ID" class="search-input" />
+          <button class="btn-search">🔍</button>
+        </div>
+ 
+        <!-- Tabela será populada via banco de dados -->
+        <div class="table-wrapper" id="tabelaDoacoes">
+          <!-- Estrutura da tabela que virá do banco:
+ 
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>ID do Doador</th>
+                <th>Data da Doação</th>
+                <th>Quantidade (ml)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>3</td>
+                <td>2024-05-10</td>
+                <td>450</td>
+              </tr>
+            </tbody>
+          </table>
+ 
+          -->
+        </div>
+      </div>
+ 
+    </div>
+  </main>
+
+</body>
+</html>

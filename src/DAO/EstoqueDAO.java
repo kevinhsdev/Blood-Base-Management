@@ -1,103 +1,49 @@
 package DAO;
 
-import Connection.ConnectionFactory;
-import Model.Estoque;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import Model.Estoque;
+import Util.ConnectionFactory;
 
 public class EstoqueDAO {
 
-    // ── LISTAR O ESTOQUE ─────────────────────────────────────
-    public List<Estoque> findAll() throws SQLException {
-        List<Estoque> lista = new ArrayList<>();
-        String sql = "SELECT * FROM estoque ORDER BY tipo_sanguineo";
-
-        try (Connection conn = ConnectionFactory.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
-
-            while (rs.next()) {
-                lista.add(mapear(rs));
-            }
-        }
-        return lista;
+    public void cadastrar(Estoque e) throws ClassNotFoundException, SQLException {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement comando = con.prepareStatement("insert into ESTOQUE (tipo_sanguineo, qtd_sangue) values (?,?)");
+        comando.setString(1, e.getTipoSanguineo());
+        comando.setDouble(2, e.getQuantidadeSangue());
+        comando.execute();
+        con.close();
     }
 
-    // ── BUSCAR ESTOQUE DE UM TIPO ESPECÍFICO ──────────────────────
-    public Estoque findByTipo(String tipoSanguineo) throws SQLException {
-        String sql = "SELECT * FROM estoque WHERE tipo_sanguineo = ?";
-
-        try (Connection conn = ConnectionFactory.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setString(1, tipoSanguineo);
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                return mapear(rs);
-            }
-        }
-        return null;
+    /*
+    public void deletar(Estoque e) throws ClassNotFoundException, SQLException {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement comando = con.prepareStatement("delete from ESTOQUE where id = ?");
+        comando.setInt(1, e.getId());
+        comando.execute();
+        con.close();
     }
 
-    // ── ADICIONAR QUANTIDADE AO ESTOQUE ──────────────────────────
-    // Usa INSERT ... ON DUPLICATE KEY UPDATE para criar ou somar ao existente
-    public void adicionar(String tipoSanguineo, double quantidade) throws SQLException {
-        String sql = "INSERT INTO estoque (tipo_sanguineo, quantidade_sangue) VALUES (?, ?) " +
-                "ON DUPLICATE KEY UPDATE quantidade_sangue = quantidade_sangue + ?";
+     */
 
-        try (Connection conn = ConnectionFactory.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+    public List<Estoque> consultarTodos() throws ClassNotFoundException, SQLException {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement comando = con.prepareStatement("select * from ESTOQUE");
+        ResultSet rs = comando.executeQuery();
 
-            ps.setString(1, tipoSanguineo);
-            ps.setDouble(2, quantidade);
-            ps.setDouble(3, quantidade);
-            ps.executeUpdate();
+        List<Estoque> lEstoque = new ArrayList<Estoque>();
+        while(rs.next()){
+            Estoque estoque = new Estoque();
+            estoque.setQuantidadeSangue(rs.getDouble("qtd_sangue"));
+            estoque.setTipoSanguineo(rs.getString("tipo_sanguineo"));
+            lEstoque.add(estoque);
         }
+        return lEstoque;
     }
 
-    // ── CONSUMIR (SUBTRAIR) DO ESTOQUE ────────────────────────────
-    // Usado quando um paciente recebe sangue
-    public void consumir(String tipoSanguineo, double quantidade) throws SQLException {
-
-        // Primeiro verifica se há saldo suficiente
-        Estoque atual = findByTipo(tipoSanguineo);
-        if (atual == null || atual.getQuantidadeSangue() < quantidade) {
-            throw new SQLException("Estoque insuficiente para o tipo " + tipoSanguineo
-                    + ". Disponível: " + (atual == null ? "0" : atual.getQuantidadeSangue()) + " ml");
-        }
-
-        String sql = "UPDATE estoque SET quantidade_sangue = quantidade_sangue - ? WHERE tipo_sanguineo = ?";
-
-        try (Connection conn = ConnectionFactory.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setDouble(1, quantidade);
-            ps.setString(2, tipoSanguineo);
-            ps.executeUpdate();
-        }
-    }
-
-    // ── DEFINIR QUANTIDADE EXATA ──────────────────────────────────
-    public void update(String tipoSanguineo, double novaQuantidade) throws SQLException {
-        String sql = "UPDATE estoque SET quantidade_sangue = ? WHERE tipo_sanguineo = ?";
-
-        try (Connection conn = ConnectionFactory.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setDouble(1, novaQuantidade);
-            ps.setString(2, tipoSanguineo);
-            ps.executeUpdate();
-        }
-    }
-
-    // ── MAPEAMENTO ResultSet → Estoque ────────────────────────────
-    private Estoque mapear(ResultSet rs) throws SQLException {
-        Estoque e = new Estoque();
-        e.setTipoSanguineo(rs.getString("tipo_sanguineo"));
-        e.setQuantidadeSangue(rs.getDouble("quantidade_sangue"));
-        return e;
-    }
 }
