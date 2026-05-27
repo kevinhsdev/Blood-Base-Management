@@ -4,6 +4,7 @@ public class Estoque {
 
     private String tipoSanguineo;
     private double quantidadeSangue;
+    private double quantidadeSangueTotal;
 
     public String getTipoSanguineo() {
         return tipoSanguineo;
@@ -19,6 +20,10 @@ public class Estoque {
 
     public void setQuantidadeSangue(double quantidadeSangue) {
         this.quantidadeSangue = quantidadeSangue;
+    }
+
+    public double getQuantidadeSangueTotal() {
+        return quantidadeSangueTotal;
     }
 
     @Override

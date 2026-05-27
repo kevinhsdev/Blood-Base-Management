@@ -2,20 +2,18 @@ package Model;
 
 public class Doador {
 
-    private int id;
+    private int idDoador;
     private String nome;
     private int idade;
     private String telefone;
     private String tipoSanguineo;
     private double peso;
 
-    public int getId() {
-        return id;
+    public int getIdDoador() {
+        return idDoador;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setIdDoador(int idDoador) {this.idDoador = idDoador;}
 
     public String getNome() {
         return nome;
@@ -60,6 +58,6 @@ public class Doador {
     @Override
     public String toString() {
         return String.format("[%d] %s | %s | %d anos | %.1f kg | %s",
-                id, nome, tipoSanguineo, idade, peso, telefone);
+                idDoador, nome, tipoSanguineo, idade, peso, telefone);
     }
 }

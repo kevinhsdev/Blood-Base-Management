@@ -1,11 +1,10 @@
 package Model;
 
-public class Doacao {
+public class Doacao extends Doador{
 
     private int id;
     private double quantidadeSangue;
     private String data;
-    private int idDoador;
 
     public int getId() {
         return id;
@@ -31,17 +30,9 @@ public class Doacao {
         this.data = data;
     }
 
-    public int getIdDoador() {
-        return idDoador;
-    }
-
-    public void setIdDoador(int idDoador) {
-        this.idDoador = idDoador;
-    }
-
     @Override
     public String toString() {
         return String.format("[%d] Doador ID: %d | %.0f ml | %s",
-                id, idDoador, quantidadeSangue, data);
+                id, quantidadeSangue, data);
     }
 }

@@ -3,6 +3,7 @@ package Model;
 public class Paciente {
     private int idade;
     private String tipoSanguineo;
+    private double peso;
 
     public int getIdade() {
         return idade;
@@ -18,6 +19,14 @@ public class Paciente {
 
     public void setTipoSanguineo(String tipoSanguineo) {
         this.tipoSanguineo = tipoSanguineo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
     }
 
     @Override

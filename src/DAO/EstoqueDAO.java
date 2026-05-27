@@ -6,12 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import Model.Estoque;
 import Util.ConnectionFactory;
 
 public class EstoqueDAO {
-
-    public void cadastrar(Estoque e) throws ClassNotFoundException, SQLException {
+/*
+    public void adicionarAoEstoque(Estoque e) throws ClassNotFoundException, SQLException {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement comando = con.prepareStatement("insert into ESTOQUE (tipo_sanguineo, qtd_sangue) values (?,?)");
         comando.setString(1, e.getTipoSanguineo());
@@ -19,18 +20,7 @@ public class EstoqueDAO {
         comando.execute();
         con.close();
     }
-
-    /*
-    public void deletar(Estoque e) throws ClassNotFoundException, SQLException {
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement comando = con.prepareStatement("delete from ESTOQUE where id = ?");
-        comando.setInt(1, e.getId());
-        comando.execute();
-        con.close();
-    }
-
-     */
-
+*/
     public List<Estoque> consultarTodos() throws ClassNotFoundException, SQLException {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement comando = con.prepareStatement("select * from ESTOQUE");
